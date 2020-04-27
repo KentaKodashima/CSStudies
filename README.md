@@ -1,4 +1,4 @@
-## Data Structure and Algorithms in JavaScript
+# Data Structure and Algorithms in JavaScript
 
 ## Runtime Complexity
 Describes the performance of an algorithm.
@@ -26,3 +26,20 @@ Every element in a collection has to be compared to every other element.
 
 - Exponential time | `2 ^ n`:  
 Adding single element to a collection will double the processing power
+
+### Big 'O' Notation
+- O(n): Linear
+- O(1): Constant
+- O(n^2): Quadratic
+
+#### Identifying runtime complexity
+- Iterating with ta simple for loop through a single collection -> Probably **O(n)**
+- Iterating through half a collection -> **O(n)**
+- Iterating through two "different" collections with separate for loops -> **o(n + m)**
+- Two nested for loops iterating over the same collection -> **O(n^2)**
+- Two nested for loops iterating over different collections -> **O(n*m)**
+- Sorting -> **O(n*log(n))**
+Searching a sorted array -> **O(log(n))**
+
+### Space Complexicity
+How much more memory is required by doubling the problem set.
