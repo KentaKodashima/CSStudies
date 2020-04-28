@@ -18,14 +18,11 @@
 //   return result[n]
 // }
 
-// Recursive way: 
+// Recursive way: 2 ^ n|Exponential time
 function fib(n) {
-  let result = [0, 1]
-  for (let i = 0; i <= n; i++) {
-    let val = result[i] + result[i + 1]
-    result.push(val)
-  }
-  return result[n]
+  if (n < 2) return n
+
+  return fib(n - 1) + fib(n - 2)
 }
 
 module.exports = fib;
