@@ -19,10 +19,34 @@
 // }
 
 // Recursive way: 2 ^ n|Exponential time
+// function fib(n) {
+//   if (n < 2) return n
+
+//   return fib(n - 1) + fib(n - 2)
+// }
+
+// Memoization
+function memoize(fn) {
+  const cache = {}
+  return function(...args) {
+    // Return cached version
+    if (cache[args]) {
+      return cache[args]
+    }
+
+    const result = fn.apply(this, args)
+    cache[args] = result
+
+    return result
+  }
+}
+
 function fib(n) {
   if (n < 2) return n
 
   return fib(n - 1) + fib(n - 2)
 }
+
+fib = memoize(fib)
 
 module.exports = fib;
