@@ -33,7 +33,7 @@ Adding single element to a collection will double the processing power
 - O(n^2): Quadratic
 
 #### Identifying runtime complexity
-- Iterating with ta simple for loop through a single collection -> Probably **O(n)**
+- Iterating with a simple for loop through a single collection -> Probably **O(n)**
 - Iterating through half a collection -> **O(n)**
 - Iterating through two "different" collections with separate for loops -> **o(n + m)**
 - Two nested for loops iterating over the same collection -> **O(n^2)**
