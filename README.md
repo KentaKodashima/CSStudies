@@ -49,7 +49,15 @@ Store the arguments of each function call along with the result. If the function
 
 ## Data Structures
 ### Queue
+FIFO
+
+### Stack
+FILO
 
 ### Sorting
 #### Bubble Sort
 Find the largest and move it to the right place. Therefore, inner loop shrinks as it goes.
+
+#### NOTES
+- undefined vs null  
+  By convention, `null` means that the value is intentionally not assigned. `undefined` means that the value is empty by accident.
