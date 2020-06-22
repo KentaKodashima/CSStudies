@@ -50,7 +50,7 @@ describe.skip('GetFirst', () => {
   });
 });
 
-describe('GetLast', () => {
+describe.skip('GetLast', () => {
   test('returns the last element', () => {
     const l = new List();
     l.insertFirst(2);
@@ -60,7 +60,7 @@ describe('GetLast', () => {
   });
 });
 
-describe.skip('Clear', () => {
+describe('Clear', () => {
   test('empties out the list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
