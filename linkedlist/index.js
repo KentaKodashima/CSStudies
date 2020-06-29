@@ -62,6 +62,7 @@ class LinkedList {
     if (!this.head) return
 
     if (this.head.next === null) { 
+      // this does not work if I assign this.head to a variable
       this.head = null
       return
     }
@@ -73,6 +74,49 @@ class LinkedList {
 
     currentNode.next = null
   }
+
+  insertLast(data) {
+    const lastNode = this.getLast()
+    const newLast = new Node(data)
+
+    if (!lastNode) {
+      this.head = newLast
+      return
+    }
+    
+    lastNode.next = newLast
+  }
+
+  getAt(index) {
+    let counter = 0
+    let currentNode = this.head
+
+    if (!currentNode) return null
+
+    while (counter !== index && currentNode.next) {
+      currentNode = currentNode.next
+      counter++
+    }
+
+    return currentNode
+  }
+
+  // getAt: Version 2
+  // getAt(index) {
+  //   let counter = 0
+  //   let currentNode = this.head
+
+  //   while (currentNode) {
+  //     if (counter === index) {
+  //       return currentNode
+  //     }
+
+  //     currentNode = currentNode.next
+  //     counter++
+  //   }
+
+  //   return null
+  // }
 }
 
 module.exports = { Node, LinkedList };

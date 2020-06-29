@@ -97,7 +97,7 @@ describe.skip('RemoveFirst', () => {
   });
 });
 
-describe('RemoveLast', () => {
+describe.skip('RemoveLast', () => {
   test('RemoveLast removes the last node when list is empty', () => {
     const l = new List();
     expect(() => {
@@ -164,7 +164,7 @@ describe.skip('GetAt', () => {
   });
 });
 
-describe.skip('RemoveAt', () => {
+describe('RemoveAt', () => {
   test('removeAt doesnt crash on an empty list', () => {
     const l = new List();
     expect(() => {
