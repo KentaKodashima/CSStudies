@@ -91,32 +91,46 @@ class LinkedList {
     let counter = 0
     let currentNode = this.head
 
-    if (!currentNode) return null
+    while (currentNode) {
+      if (counter === index) {
+        return currentNode
+      }
 
-    while (counter !== index && currentNode.next) {
       currentNode = currentNode.next
       counter++
     }
 
-    return currentNode
+    return null
   }
 
-  // getAt: Version 2
-  // getAt(index) {
-  //   let counter = 0
-  //   let currentNode = this.head
+  removeAt(index) {
+    if (!this.head) return
 
-  //   while (currentNode) {
-  //     if (counter === index) {
-  //       return currentNode
-  //     }
+    if (index === 0) {
+      this.head = this.head.next
+      return
+    }
 
-  //     currentNode = currentNode.next
-  //     counter++
-  //   }
+    let counter = 0
+    // In case there is getAt() availbale
+    // let previousNode = getAt(index - 1)
+    let previousNode = this.head
+    while(previousNode) {
+      if (counter === index - 1) break
 
-  //   return null
-  // }
+      previousNode = previousNode.next
+      counter++
+    }
+
+    if (!previousNode || !previousNode.next) return
+
+    if (previousNode.next.next) {
+      previousNode.next = previousNode.next.next
+    } else {
+      previousNode.next = null
+    }
+
+  }
 }
 
 module.exports = { Node, LinkedList };
