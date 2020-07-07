@@ -129,7 +129,21 @@ class LinkedList {
     } else {
       previousNode.next = null
     }
+  }
 
+  insertAt(data, index) {
+    if (!this.head) {
+      this.head = new Node(data)
+      return
+    }
+
+    if (index === 0) {
+      this.head = new Node(data, this.head)
+      return
+    }
+    
+    let previousNode = this.getAt(index - 1) || this.getLast()
+    previousNode.next = new Node(data, previousNode.next)
   }
 }
 
