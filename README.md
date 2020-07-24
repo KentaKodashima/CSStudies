@@ -61,3 +61,17 @@ Find the largest and move it to the right place. Therefore, inner loop shrinks a
 #### NOTES
 - undefined vs null  
   By convention, `null` means that the value is intentionally not assigned. `undefined` means that the value is empty by accident.
+
+
+### Trees
+Node consists of `data` and `children[]`.
+
+#### Operations
+##### Traversal
+Iterating through a tree. There are different orders of traversal.
+
+###### Breadth-First Traversal
+Starting from the top-left, then moving towards the bottom.
+
+###### Deapth-First Traversal
+Traverse through all the children first. Then, moves towards right and does the same.
