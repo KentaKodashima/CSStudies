@@ -20,8 +20,20 @@ class Node {
     const node = new Node(data)
     this.children.push(node)
   }
+
+  remove(data) {
+    this.children = this.children.filter(child => child.data !== data)
+  }
 }
 
-class Tree {}
+class Tree {
+  constructor() {
+    this.root = null
+  }
+
+  traverseBF() {}
+
+  traverseDF() {}
+}
 
 module.exports = { Tree, Node };
