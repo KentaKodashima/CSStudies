@@ -72,6 +72,33 @@ Iterating through a tree. There are different orders of traversal.
 
 ###### Breadth-First Traversal
 Starting from the top-left, then moving towards the bottom.
+Add children at the end of array to check all the node on the same level first.
+
+```
+traverseBF(fn) {
+  const arr = [this.root]
+  
+  while (arr.length) {
+    const node = arr.shift()
+    arr.push(...node.children)
+    fn(node)
+  }
+}
+```
 
 ###### Deapth-First Traversal
 Traverse through all the children first. Then, moves towards right and does the same.
+
+Add children at the front of array to check all the children of a node first.
+
+```
+traverseDF(fn) {
+  const arr = [this.root]
+  
+  while (arr.length) {
+    const node = arr.shift()
+    arr.unshift(...node.children)
+    fn(node)
+  }
+}
+```
