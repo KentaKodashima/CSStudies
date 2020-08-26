@@ -102,3 +102,6 @@ traverseDF(fn) {
   }
 }
 ```
+
+##### Binary Search Tree
+Every node can have at most 2 children. Children's value is less than the parent on the left side and bigger on the right side.
