@@ -28,8 +28,12 @@ Every element in a collection has to be compared to every other element.
 Adding single element to a collection will double the processing power
 
 ### Big 'O' Notation
-Important to understand Big O Notation to decide an algorithms that is faster and less-memory intensive than other options. Since time has the following problems, comparing time isn't the best way to measure the efficiency of an algorithm.
+Big O Notation is just a way to formalize fuzzy counting. It allows us to understand how the runtime of an algorithm grows as the inputs grow.
 
+It is helpful to decide an algorithms that is faster and less-memory intensive than other options. Since time has the following problems, comparing time isn't the best way to measure the efficiency of an algorithm.
+
+
+### Counting operations
 **The problem with time**
 - Different machines will record different times
 - The same machine will record different times
@@ -64,9 +68,24 @@ function addUpTo(n) {
 - `total += 1` : n additions and n assignments
 
 #### Visualizing time complexities
+##### Constant O(1)
+Changing the input doesn't affect the runtime. It's constant because it doesn't affect the number of operations that it has to run.
 
-- O(n): Linear
-- O(1): Constant
+##### Linear O(n)
+As `n` grows, the runtime grows.
+
+##### O(n<sup>2</sup>)
+As `n` grows, the runtime grows at the rate of `n` squared.  
+e.g. Nested for loops
+
+### Big O Shorthands
+1. Arithmetic operations are constant
+2. Variable assignment is constant
+3. Accessing elements in an array (by index) or object (by key) is constant
+4. In a loop, **the complexity is the length of the loop times the complexity of whatever happens inside of the loop**
+
+
+
 - O(n^2): Quadratic
 
 #### Identifying runtime complexity
