@@ -67,7 +67,7 @@ function addUpTo(n) {
 - `i <= n` : n comparisons
 - `total += 1` : n additions and n assignments
 
-#### Visualizing time complexities
+#### Common time complexities
 ##### Constant O(1)
 Changing the input doesn't affect the runtime. It's constant because it doesn't affect the number of operations that it has to run.
 
@@ -78,12 +78,56 @@ As `n` grows, the runtime grows.
 As `n` grows, the runtime grows at the rate of `n` squared.  
 e.g. Nested for loops
 
+#### Logarithms
+The logarithms of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
+
+##### O(log n)
+- log<sub>2</sub>(8) = 3 ===> 2<sup>3</sup> = 8
+- log<sub>2</sub>(value) = exponent ===> 2<sup>exponent</sup> = value
+**log === log<sub>2</sub>**
+
 ### Big O Shorthands
 1. Arithmetic operations are constant
 2. Variable assignment is constant
 3. Accessing elements in an array (by index) or object (by key) is constant
 4. In a loop, **the complexity is the length of the loop times the complexity of whatever happens inside of the loop**
 
+### Space Complexity
+Using big O notation, we can analize space complexity meaning how much additional memory we need to allocate in order to run the code an algorithm.
+
+1. Most primitives (booleans, numbers, undefined, null) are constant space
+2. String require O(n) space, where n is the string length
+3. Reference types are generally O(n), where n is the length for arrays or the number of keys for objects
+
+Considering the following example, it only requires constant space: O(1).
+
+```
+function sum(arr) {
+  let total = 0
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i]
+  }
+  return total
+}
+```
+
+- `let total = 0` : 1 space for number
+- `let i = 0` : 1 space for number
+
+However, the space needed for the following example varies depending on input: O(n) because the length of the array affects the space complexity.
+
+```
+function double(arr) {
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(2 * arr[i])
+  }
+  return newArr
+}
+```
+
+- `let newArr = []` : n space for number
+- `let i = 0` : 1 space for number
 
 
 - O(n^2): Quadratic
@@ -95,10 +139,7 @@ e.g. Nested for loops
 - Two nested for loops iterating over the same collection -> **O(n^2)**
 - Two nested for loops iterating over different collections -> **O(n*m)**
 - Sorting -> **O(n*log(n))**
-Searching a sorted array -> **O(log(n))**
-
-### Space Complexicity
-How much more memory is required by doubling the problem set.
+- Searching a sorted array -> **O(log(n))**
 
 ### Memoization
 Store the arguments of each function call along with the result. If the function is called again with the same arguments, return the precomputed result, rather than running the function again.
