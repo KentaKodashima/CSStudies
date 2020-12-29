@@ -15,3 +15,19 @@
 
 ## Break it down
 Break the problem down into some steps.
+
+## Solve/Simplify
+1. Find the core difficulty in what you're trying to do
+2. Temporarily ifnore that difficulty
+3. Write a simplified solution
+4. Then incorporate that difficulty back in
+
+## Look back and refactor
+### Refactoring questions
+- Can you check the result?
+- Can you derive the result differently?
+- Can you understand it at a glance?
+- Can you use the result or method for some other problem?
+- Can you improve the performance of your solution?
+- Can you think of other ways to refactor?
+- How have other people solved this problem?
