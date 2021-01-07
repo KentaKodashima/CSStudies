@@ -106,7 +106,7 @@ function maxSubarraySum(arr, num) {
   }
 
   let max = -Infinity
-  for (let i = 0; j < num; j++) {
+  for (let i = 0; i < num; i++) {
     let temp = 0
 
     for (let j = 0; j < num; j++) {
@@ -140,6 +140,7 @@ function maxSubarraySum(arr, num) {
   tempSum = maxSum
 
   for (let i = num; i < arr.length; i++) {
+    // Subtract the first num and add a new num - this is called sliding
     tempSum = tempSum - arr[i - num] + arr[i]
     maxSum = Math.max(maxSum, tempSum)
   }
