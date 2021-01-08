@@ -309,7 +309,17 @@ console.log(maxSubarraySum([2,3],3))
  * Space complexity: O(1)
 */
 function minSubArrayLen(arr, num) {
-  
+  let min = 0
+  let current = 0
+  let tempSum = 0
+
+  while (tempSum < num) {
+
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    tempSum = arr[current] 
+  }
 }
 
 // Sample inputs
@@ -328,8 +338,8 @@ console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],95)) // 0
  * 
  * Time complexity: O(n)
 */
-function findLongestSubstring(){
-  
+function findLongestSubstring() {
+  let longest = 0
 }
 
 // Sample inputs
