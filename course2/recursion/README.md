@@ -18,3 +18,8 @@ e.g.
  - A stack data structure
  - Any time a function is invoked, it is placed on the top of the call stack (push)
  - When the function hits the return keyword or when the function ends, the compiler will remove it from the top (pop)
+
+## Common pitfalls with recursive solutions
+ - No base case
+ - Forgetting to return or returning the wrong thing
+ - Stack overflow (too many functions are trying to be called / the recursion's not stopping)

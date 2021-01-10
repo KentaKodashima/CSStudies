@@ -298,6 +298,24 @@ console.log(maxSubarraySum([-3,4,0,-2,6,-1],2))
 console.log(maxSubarraySum([3,-2,7,-4,1,-1,4,-2,1],2))
 console.log(maxSubarraySum([2,3],3))
 
+// Provided solution
+// function maxSubarraySum(arr, num){
+//   if (arr.length < num) return null;
+
+//   let total = 0;
+//   for (let i=0; i<num; i++){
+//      total += arr[i];
+//   }
+//   let currentTotal = total;
+//   for (let i = num; i < arr.length; i++) {
+//      currentTotal += arr[i] - arr[i-num];
+//      total = Math.max(total, currentTotal);
+//   }
+//   return total;
+// }
+
+
+
 /**
  * Sliding window
  * 
@@ -313,12 +331,14 @@ function minSubArrayLen(arr, num) {
   let current = 0
   let tempSum = 0
 
-  while (tempSum < num) {
+  tempSum = arr[current]
 
-  }
-
-  for (let i = 0; i < arr.length; i++) {
-    tempSum = arr[current] 
+  for (let i = 1; i < arr.length; i++) {
+    if (tempSum >= num) {
+      min = i
+      current++
+    }
+    tempSum += arr[i]
   }
 }
 
@@ -330,6 +350,38 @@ console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],39)) // 3
 console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],55)) // 5))
 console.log(minSubArrayLen([4,3,3,8,1,2,3],11)) // 2
 console.log(minSubArrayLen([1,4,16,22,5,7,8,9,10],95)) // 0
+
+// Provided solution
+// function minSubArrayLen(nums, sum) {
+//   let total = 0;
+//   let start = 0;
+//   let end = 0;
+//   let minLen = Infinity;
+ 
+//   while (start < nums.length) {
+//     // if current window doesn't add up to the given sum then 
+// 		// move the window to right
+//     if(total < sum && end < nums.length){
+//       total += nums[end];
+// 			end++;
+//     }
+//     // if current window adds up to at least the sum given then
+// 		// we can shrink the window 
+//     else if(total >= sum){
+//       minLen = Math.min(minLen, end-start);
+// 			total -= nums[start];
+// 			start++;
+//     } 
+//     // current total less than required total but we reach the end, need this or else we'll be in an infinite loop 
+//     else {
+//       break;
+//     }
+//   }
+ 
+//   return minLen === Infinity ? 0 : minLen;
+// }
+
+
 
 /**
  * Sliding window
@@ -350,3 +402,22 @@ console.log(findLongestSubstring('thecatinthehat')) // 7
 console.log(findLongestSubstring('bbbbbb')) // 1
 console.log(findLongestSubstring('longestsubstring')) // 8
 console.log(findLongestSubstring('thisishowwedoit')) // 6
+
+// Provided solution
+// function findLongestSubstring(str) {
+//   let longest = 0;
+//   let seen = {};
+//   let start = 0;
+ 
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
+//     if (seen[char]) {
+//       start = Math.max(start, seen[char]);
+//     }
+//     // index - beginning of substring + 1 (to include current in count)
+//     longest = Math.max(longest, i - start + 1);
+//     // store the index of the next char so as to not double count
+//     seen[char] = i + 1;
+//   }
+//   return longest;
+// }
