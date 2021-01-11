@@ -23,3 +23,11 @@ e.g.
  - No base case
  - Forgetting to return or returning the wrong thing
  - Stack overflow (too many functions are trying to be called / the recursion's not stopping)
+
+## Helper method recursion
+Reffering to recursive functions that have a helper method inside of them. The helper method calls itself recursively.
+
+## PUre recurssion tips
+- For arrays, use methods like `slice()`, the spread operator and `concat()` that make copies of arrays so it doesn't mutate the original arrays
+- Strings are immutable so you will need to use methods like `slice()`, `substr()` or `substring()` to make copies of strings
+- To make copies of objects, use `Object.assign()` or the spread operator

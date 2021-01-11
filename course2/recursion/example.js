@@ -60,3 +60,48 @@ function factorial2(num) {
   if (num === 1) return 1
   return num * factorial(num - 1)
 }
+
+
+
+/**
+ * Helper method recursion
+*/
+function collectOdds(nums) {
+  let result = []
+
+  function helper(helperInput) {
+    if (helperInput.length === 0) return
+    if (helperInput[0] % 2 !== 0) result.push(helperInput[0])
+    helper(helperInput.slice(1))
+  }
+
+  helper(nums)
+
+  return result
+}
+
+// Pure recursion ver
+function pureCollectOdds(nums) {
+  let result = []
+
+  if (nums.length === 0) return result
+  if (nums[0] % 2 !== 0) result.push(nums[0])
+
+  result = result.concat(pureCollectOdds(nums.slice(1)))
+
+  return result
+}
+// pureCollectOdds([1,2,3,4,5])
+
+// [1].concat(pureCollectOdds([2,3,4,5]))
+// [].concat(pureCollectOdds([3,4,5]))
+// [3].concat(pureCollectOdds([4,5]))
+// [].concat(pureCollectOdds([5]))
+// [5].concat(pureCollectOdds([]))
+
+// [5].concat([])
+// [].concat([5])
+// [3].concat([5])
+// [].concat([3,5])
+// [1].concat([3,5])
+// result = [1,3,5]
