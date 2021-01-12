@@ -32,7 +32,7 @@ function countDown2(num) {
 */
 function sumRange(num) {
   // base case
-  if (num ===1) return 1
+  if (num === 1) return 1
   return num + sumRange(num -1)
 }
 
@@ -58,7 +58,7 @@ function factorial(num) {
 function factorial2(num) {
   // base case
   if (num === 1) return 1
-  return num * factorial(num - 1)
+  return num * factorial2(num - 1)
 }
 
 
