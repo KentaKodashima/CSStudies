@@ -21,6 +21,25 @@ Iterating through all elements in a collection. (e.g. `for (let i = 0; i < arr.l
 - Quasilinear time | `n * log(n)`:  
 Doubling the number of elements that the operation is iterating over does not double the amount of work. (e.g. **sorting operations**)
 
+
+e.g: Binary Search
+- Searching for 13 from the array of 16 elements
+[2,4,5,9,11,14,15,19,21,25,28,30,50,52,60,63]
+[2,4,5,9,11,14,15]
+[11,14,15]
+[11]
+
+4 steps total
+
+- Searching for 32 from the array of 32 elements
+[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,32,35]
+[17,18,19,20,21,22,23,24,25,26,27,28,29,30,32,35]
+[25,26,27,28,29,30,32,35]
+[29,30,32,35]
+[32,35]
+
+5 steps total
+
 - Quadratic time | `n ^ 2`:  
 Every element in a collection has to be compared to every other element.
 
