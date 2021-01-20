@@ -16,6 +16,7 @@ const swap = (arr, index1, index2) => {
   arr[index2] = temp
 }
 
+// This solution doesn't work inside of quickSort
 function pivot(arr, startIndex = 0, endIndex = arr.length - 1) {
   let pivotIndex = 0
 
@@ -71,10 +72,11 @@ function pivot2(arr, start = 0, end = arr.length - 1) {
  * [1]
 */
 function quickSort(arr, left = 0, right = arr.length - 1) {
-  if (arr.length <= 1) return arr
-  let pivotIndex = pivot(arr)
-  quickSort(arr.slice(0, pivotIndex))
-  quickSort(arr.slice(0, pivotIndex))
+  if (left < right) {
+    let pivotIndex = pivot2(arr, left, right)
+    quickSort(arr, left, pivotIndex - 1)
+    quickSort(arr, pivotIndex + 1, right)
+  }
   return arr
 }
 

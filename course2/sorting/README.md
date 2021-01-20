@@ -12,7 +12,7 @@ A sorting algorithm where the largest values bubble up to the top.
 ## Selection sort
 Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position.
 
-**Time Complexity**: **O(n<sup>2</sup>)**  
+**Average Time Complexity**: **O(n<sup>2</sup>)**  
 **Best Time Complexity**: **O(n)**  
 **Worst Time Complexity**: **O(n<sup>2</sup>)**
 **Space Complexity**: **O(1)**
@@ -20,7 +20,7 @@ Similar to bubble sort, but instead of first placing large values into sorted po
 ## Insertion sort
 Builds up the sort by gradually creating a larger left half which is always sorted.
 
-**Time Complexity**: **O(n<sup>2</sup>)**  
+**Average Time Complexity**: **O(n<sup>2</sup>)**  
 **Best Time Complexity**: **O(n<sup>2</sup>)**  
 **Worst Time Complexity**: **O(n<sup>2</sup>)**
 **Space Complexity**: **O(1)**
@@ -28,7 +28,7 @@ Builds up the sort by gradually creating a larger left half which is always sort
 ## Merge sort
 It exploits the fact that arrays of 0 or 1 element are always sorted. It works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array.
 
-**Time Complexity**: **O(n log n)**  
+**Average Time Complexity**: **O(n log n)**  
 **Best Time Complexity**: **O(n log n)**  
 **Worst Time Complexity**: **O(n log n)**  
 **Space Complexity**: **O(n)**
@@ -55,3 +55,8 @@ Like merge sort, it exploits the fact that arrays of 0 or 1 element are always s
 [3,2,1,4,5,7,6,8] 5 is in the appropriate spot
 [3,1,2,4] [7,6,8] 3 and 7 become pivot
 [1,2,3,4] [6,7,8]
+
+**Average Time Complexity**: **O(n log n)**  
+**Best Time Complexity**: **O(n log n)**  
+**Worst Time Complexity**: **O(n<sup>2</sup>)**  
+**Space Complexity**: **O(log n)**
