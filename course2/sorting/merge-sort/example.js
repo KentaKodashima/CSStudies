@@ -98,4 +98,30 @@ function mergeSort(arr) {
 }
 console.log(mergeSort([10,24,76,73,72,1,9]))
 
-// Provided solution
+/**
+ * Provided solution
+ * Left
+ * [10,24,76]         mergeSort2(arr.slice(0, mid))
+ * [10] [24, 76]      left: return [1], right: mergeSort2(arr.slice(mid))
+ * [10] [24] [76]     left [10], right: merge2(left, right)
+ * [10] [24, 76]      merge2(left, right)
+ * [10,24,76]         left value returned
+ * 
+ * Right
+ * [73,72,1,9]         mergeSort2(arr.slice(mid))
+ * [73,72] [1,9]       left: mergeSort2(arr.slice(0, mid)), right: mergeSort2(arr.slice(mid))
+ * [73] [72] [1] [9]   left: merge2(left, right), right: merge2(left, right)
+ * [72, 73] [1, 9]     merge2(left, right)
+ * [1, 9, 72, 73]      right value returned
+ * 
+ * Result
+ * [1, 9, 10, 24, 72, 73, 76]
+*/
+function mergeSort2(arr) {
+  if (arr.length <= 1) return arr
+  let mid = Math.floor(arr.length / 2)
+  let left = mergeSort2(arr.slice(0, mid))
+  let right = mergeSort2(arr.slice(mid))
+  return merge2(left, right)
+}
+console.log(mergeSort2([10,24,76,73,72,1,9]))
