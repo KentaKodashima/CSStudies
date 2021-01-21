@@ -60,3 +60,13 @@ Like merge sort, it exploits the fact that arrays of 0 or 1 element are always s
 **Best Time Complexity**: **O(n log n)**  
 **Worst Time Complexity**: **O(n<sup>2</sup>)**  
 **Space Complexity**: **O(log n)**
+
+## Radix sort
+Radix sort is a special sorting algorithm that works on lists of numbers. It never makes comparisons between elements. Instead, it exploits the fact that information about the size of a number is encoded in the number of digits. More digits means a bigger number.
+
+### Flow
+[1556, 4, 3556, 593, 408, 4386, 902, 7, 8157, 86, 9637, 29] Base
+[902, 593, 4, 1556, 3556, 4386, 86, 7, 8157, 9637, 408, 29] Sorted based on the last digit
+[902, 4, 7, 408, 29, 9637, 1556, 2556, 8157, 4386, 86, 593] Sorted based on the second digit from the last
+[4, 7, 29, 86, 8157, 4386, 408, 1556, 3556, 593, 9637, 902] Sorted based on the third digit from the last
+[4, 7, 29, 86, 408, 593, 902, 1556, 3556, 4386, 8157, 9637] Sorted based on the fourth digit from the last
