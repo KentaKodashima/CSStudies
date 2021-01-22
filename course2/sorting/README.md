@@ -4,32 +4,32 @@ Sorting is the process of rearranging the items in a collection (e.g. arrays) so
 ## Bubble sort
 A sorting algorithm where the largest values bubble up to the top.
 
-**Average Time Complexity**: **O(n<sup>2</sup>)**  
 **Best Time Complexity**: **O(n)**  
+**Average Time Complexity**: **O(n<sup>2</sup>)**  
 **Worst Time Complexity**: **O(n<sup>2</sup>)**
 **Space Complexity**: **O(1)**
 
 ## Selection sort
 Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position.
 
-**Average Time Complexity**: **O(n<sup>2</sup>)**  
 **Best Time Complexity**: **O(n)**  
+**Average Time Complexity**: **O(n<sup>2</sup>)**  
 **Worst Time Complexity**: **O(n<sup>2</sup>)**
 **Space Complexity**: **O(1)**
 
 ## Insertion sort
 Builds up the sort by gradually creating a larger left half which is always sorted.
 
-**Average Time Complexity**: **O(n<sup>2</sup>)**  
 **Best Time Complexity**: **O(n<sup>2</sup>)**  
+**Average Time Complexity**: **O(n<sup>2</sup>)**  
 **Worst Time Complexity**: **O(n<sup>2</sup>)**
 **Space Complexity**: **O(1)**
 
 ## Merge sort
 It exploits the fact that arrays of 0 or 1 element are always sorted. It works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array.
 
-**Average Time Complexity**: **O(n log n)**  
 **Best Time Complexity**: **O(n log n)**  
+**Average Time Complexity**: **O(n log n)**  
 **Worst Time Complexity**: **O(n log n)**  
 **Space Complexity**: **O(n)**
 
@@ -56,8 +56,8 @@ Like merge sort, it exploits the fact that arrays of 0 or 1 element are always s
 [3,1,2,4] [7,6,8] 3 and 7 become pivot
 [1,2,3,4] [6,7,8]
 
-**Average Time Complexity**: **O(n log n)**  
 **Best Time Complexity**: **O(n log n)**  
+**Average Time Complexity**: **O(n log n)**  
 **Worst Time Complexity**: **O(n<sup>2</sup>)**  
 **Space Complexity**: **O(log n)**
 
@@ -70,3 +70,11 @@ Radix sort is a special sorting algorithm that works on lists of numbers. It nev
 [902, 4, 7, 408, 29, 9637, 1556, 2556, 8157, 4386, 86, 593] Sorted based on the second digit from the last
 [4, 7, 29, 86, 8157, 4386, 408, 1556, 3556, 593, 9637, 902] Sorted based on the third digit from the last
 [4, 7, 29, 86, 408, 593, 902, 1556, 3556, 4386, 8157, 9637] Sorted based on the fourth digit from the last
+
+**Best Time Complexity**: **O(nk)**  
+**Average Time Complexity**: **O(nk)**  
+**Worst Time Complexity**: **O(nk)**  
+**Space Complexity**: **O(n + k)**  
+
+- n - length of array
+- k - number of digits(average) 

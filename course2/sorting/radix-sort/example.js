@@ -43,17 +43,14 @@ function mostDigits(nums) {
 // This solution isn't sorting properly
 function radixSort(nums) {
   const maxNum = mostDigits(nums)
-  let result
+  let result = [...nums]
   for (let k = 0; k < maxNum; k++) {
-    result = []
     let buckets = [...Array(10)].map(e => Array())
-    for (let i = 0; i < nums.length; i++) {
-      let bucketIndex = getDigit(nums[i], k)
-      buckets[bucketIndex].push(nums[i])
+    for (let i = 0; i < result.length; i++) {
+      let bucketIndex = getDigit(result[i], k)
+      buckets[bucketIndex].push(result[i])
     }
-    for (let j = 0; j < buckets.length; j++) {
-      result = result.concat(buckets[j])
-    }
+    result = [].concat(...buckets)
   }
   return result
 }
