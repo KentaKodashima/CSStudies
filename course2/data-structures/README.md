@@ -14,3 +14,9 @@ A data structure that contains a head, tail and length property. Linked lists co
 - Indexed in order
 - Insertion and deletion can be expensive
 - Can quickly be accessed at a specific index
+
+### Time complexity
+- Insertion: O(1)
+- Removal: O(1) or O(n)
+- Searching: O(n)
+- Access: O(n)

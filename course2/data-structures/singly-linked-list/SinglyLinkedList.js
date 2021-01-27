@@ -261,18 +261,40 @@ class SinglyLinkedList {
    * - Set the node variable to be the value of the next variable
   */
   reverse() {
-    const swapNode = (node1, node2) => {
-      let temp = node1
-      node1 = node2
-      node2 = temp
-    }
-    swapNode(this.head, this.tail)
-    
+    let current = this.head
+    this.head = this.tail
+    this.tail = current
+
     let prev = null
     let next = null
+    let counter = 0
 
-    
+    while (counter < this.length) {
+      next = current.next
+      current.next = prev
+      prev = current
+      current = next
+      counter++
+    }
+
+    return this
   }
+
+  // Provided solution
+  // reverse() {
+  //   var node = this.head
+  //   this.head = this.tail
+  //   this.tail = node
+  //   var next
+  //   var prev = null
+  //   for (let i = 0; i < this.length; i++) {
+  //     next = current.next
+  //     node.next = prev
+  //     prev = current
+  //     node = next
+  //   }
+  //   return this
+  // }
 }
 
 // let list = new SinglyLinkedList()
@@ -295,18 +317,32 @@ class SinglyLinkedList {
 // console.log(list3.shift())
 // console.log(list3)
 
-let list4 = new SinglyLinkedList()
-list4.push(1)
-list4.push(2)
-list4.push(3)
-console.log(list4, 'iist 4')
-console.log(list4.get(0))
-console.log(list4.get(1))
-console.log(list4.insert(4,3))
-console.log(list4)
-console.log(list4.get(2))
-console.log(list4.remove(2))
-console.log(list4.get(0))
-console.log(list4.get(1))
-console.log(list4.get(2))
-console.log(list4)
+// let list4 = new SinglyLinkedList()
+// list4.push(1)
+// list4.push(2)
+// list4.push(3)
+// console.log(list4, 'iist 4')
+// console.log(list4.get(0))
+// console.log(list4.get(1))
+// console.log(list4.insert(4,3))
+// console.log(list4)
+// console.log(list4.get(2))
+// console.log(list4.remove(2))
+// console.log(list4.get(0))
+// console.log(list4.get(1))
+// console.log(list4.get(2))
+// console.log(list4)
+
+let list5 = new SinglyLinkedList()
+list5.push(1)
+list5.push(2)
+list5.push(3)
+list5.push(4)
+list5.push(5)
+list5.reverse()
+console.log(list5)
+console.log(list5.get(0))
+console.log(list5.get(1))
+console.log(list5.get(2))
+console.log(list5.get(3))
+console.log(list5.get(4))
