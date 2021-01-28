@@ -20,3 +20,6 @@ A data structure that contains a head, tail and length property. Linked lists co
 - Removal: O(1) or O(n)
 - Searching: O(n)
 - Access: O(n)
+
+## Doubly Linked List
+Doubly linked lists are almost identical to singly linked lists. However, every node in doubly linked lists has another pointer to the previous node. 
