@@ -22,4 +22,15 @@ A data structure that contains a head, tail and length property. Linked lists co
 - Access: O(n)
 
 ## Doubly Linked List
-Doubly linked lists are almost identical to singly linked lists. However, every node in doubly linked lists has another pointer to the previous node. 
+Doubly linked lists are almost identical to singly linked lists. However, every node in doubly linked lists has another pointer to the previous node. Therefore, finding nodes can be done in half time of singly linked lists. However, they take up more memory considering the extra pointer.
+
+### Time complexity
+- Insertion: O(1)
+- Removal: O(1)
+- Searching: O(n)
+- Access: O(n)
+
+## Stack
+
+
+## Queue

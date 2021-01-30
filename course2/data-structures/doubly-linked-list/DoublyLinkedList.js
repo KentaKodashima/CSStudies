@@ -141,7 +141,8 @@ class DoublyLinkedList {
    *      - Return the node once it is found
   */
   get(index) {
-    if (index < 0 || index > this.length) return null
+    if (index < 0 || index > this.length - 1) return null
+    if (!this.head) return null
     
     const middle = Math.floor((this.length - 1) / 2)
     if (index <= middle) {
@@ -184,11 +185,119 @@ class DoublyLinkedList {
   //   }
   //   return current
   // }
+
+  /**
+   * Setting
+   * 
+   * - Create a variable which is the result of the get method at the index passed to the function
+   *      - If the get method returns a valid node, set the value of that node to be the value passed to the function
+   *      - Return true
+   * - Otherwise, return false
+  */
+  set(index, val) {
+    let targetPosition = this.get(index)
+    if (targetPosition) {
+      targetPosition.val = val
+      return true
+    }
+    return false
+  }
+
+  /**
+   * Insert
+   * 
+   * - If the index is less than zero or greater than or equal to the length, return false
+   * - If the index is 0, unshift
+   * - If the index is the same as the length, push
+   * - Use the get method to access the index - 1
+   * - Set the next and prev properties on the correct nodes to link everything together
+   * - Increment the length
+   * - Return true
+  */
+  insert(val, index) {
+    if (index < 0 || index > this.length) return false
+    if (index === 0) this.unshift(val)
+    if (index === this.length - 1) this.push(val)
+
+    let node = new Node(val)
+    let targetPrev = this.get(index - 1)
+    if (targetPrev) {
+      node.prev = targetPrev
+      node.next = targetPrev.next
+      targetPrev.next = node
+    }
+
+    this.length++
+    return true
+  }
+
+  // Provided solution
+  // inser(index, val) {
+  //   if (index < 0 || index > this.length) return false
+  //   if (index === 0) this.unshift(val)
+  //   if (index === this.length - 1) this.push(val)
+
+  //   var newNode = new Node(val)
+  //   var beforeNode = this.get(index - 1)
+  //   var afterNode = beforeNode.next
+
+  //   beforeNode.next = newNode
+  //   newNode.prev = beforeNode
+  //   newNode.next = afterNode
+  //   afterNode.prev = newNode
+  //   this.length++
+  //   return true
+  // }
+
+  /**
+   * Removing
+   * 
+   * - If the index is less than zero or greater than or equal to the length return undefined
+  */
+  remove(index) {
+    if (index < 0 || index > this.length) return undefined
+    if (index === 0) return this.shift()
+    if (index === this.length - 1) return this.pop()
+
+    let nodeToBeRemoved = this.get(index)
+    let prev = nodeToBeRemoved.prev
+    let next = nodeToBeRemoved.next
+    prev.next = next
+    next.prev = prev
+    nodeToBeRemoved.next = null
+    nodeToBeRemoved.prev = null
+    this.length--
+
+    return nodeToBeRemoved
+  }
+
+  // Reversing
+  reverse() {
+    let current = this.head
+    this.head = this.tail
+    this.tail = this.head
+
+    let next = null
+    let counter = 0
+
+    while (counter <= this.length) {
+      next = current.next
+      current.next = current.prev
+      current.prev = current.next
+      current = next
+      counter++
+    }
+
+    return this
+  }
 }
 
 let list = new DoublyLinkedList()
 list.push(1)
 list.push(2)
+list.push(3)
 // console.log(list.pop())
-console.log(list.get(2))
-// console.log(list, 'list')
+// console.log(list.get(2))
+list.insert(4, 1)
+console.log(list.get(1))
+console.log(list, 'list')
