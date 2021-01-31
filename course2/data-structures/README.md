@@ -31,6 +31,12 @@ Doubly linked lists are almost identical to singly linked lists. However, every 
 - Access: O(n)
 
 ## Stack
+Stack is a FIFO data structure. The last element added to the stack will be the first element removed from the stack.
 
+### Use cases
+- Managing function invocations
+- Undo / Redo actions (like in Photoshop)
+- Routing (the history object)
+- 
 
 ## Queue
