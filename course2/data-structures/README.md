@@ -33,10 +33,17 @@ Doubly linked lists are almost identical to singly linked lists. However, every 
 ## Stack
 Stack is a FIFO data structure. The last element added to the stack will be the first element removed from the stack.
 
+It can be implemented easily using an array (push/pop). However, a stack doesn't need to have indices. In this case, implementing a **linked list** with shift and unshift can be more efficient.
+
 ### Use cases
 - Managing function invocations
 - Undo / Redo actions (like in Photoshop)
 - Routing (the history object)
-- 
+
+### Time complexity
+- Insertion: O(1)
+- Removal: O(1)
+- Searching: O(n)
+- Access: O(n)
 
 ## Queue
