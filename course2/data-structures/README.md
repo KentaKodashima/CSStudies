@@ -47,3 +47,19 @@ It can be implemented easily using an array (push/pop). However, a stack doesn't
 - Access: O(n)
 
 ## Queue
+Queue is a FIFO data structure. The first element added to the queue will be the first element removed from the queue.
+
+Just like stack, it can be implemented easily using an array (push/shift). However, a queue doesn't need to have indices. In this case, implementing a **linked list** with push and shift can be more efficient.
+
+### Use cases
+- Background tasks
+- Uploading resources
+- Print queue
+- Task processing
+- Download queue (the completion order might be different)
+
+### Time complexity
+- Insertion: O(1)
+- Removal: O(1)
+- Searching: O(n)
+- Access: O(n)
