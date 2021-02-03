@@ -64,10 +64,16 @@ Just like stack, it can be implemented easily using an array (push/shift). Howev
 - Searching: O(n)
 - Access: O(n)
 
-## Tree
+## Trees
 Tree is a data structure that consists of nodes in a parent/child(s) relationship.
 
-### Terminologies
+**Features**
+- Non-linear data structures that contain a root and child nodes
+- Binary trees can have values of any type, but at most two children for each parent
+- Binary search trees are a more specific versionn of binary trees where every node to the left of a parent is less than it's value and every node to the right is greater
+- We can search through trees using BFS and DFS
+
+**Terminologies**
 - Root - The top node in a tree
 - Child - A node directly connected to another node when moving away from the root
 - Parent - The converse notion of a child
@@ -75,7 +81,7 @@ Tree is a data structure that consists of nodes in a parent/child(s) relationshi
 - Leaf - A node with no children
 - Edge - The connection between one node and another
 
-### Use cases
+**Use cases**
 - HTML DOM
 - Network routing
 - Abstract syntax tree
@@ -83,7 +89,7 @@ Tree is a data structure that consists of nodes in a parent/child(s) relationshi
 - Computer file systems
 - JSON
 
-### Kinds of trees
+**Kinds of trees**
 - Trees
 - Binary trees
 - Binary search trees
@@ -102,3 +108,29 @@ Just like in a binary tree, each node can have only 2 children in a binary searc
 #### Time complexity
 - Insertion: O(log n)
 - Searching: O(log n)
+
+### Tree traversal
+There are some ways to vist every node only once.
+
+#### Breath first search
+BFS looks up every node in the same level before it looks node's children.
+
+#### Depth first search
+DFS searches all nodes down to the end before visiting sibiling nodes.
+
+- Pre order
+Visit the node first, then explore the entire left side and move on to the entire right.
+
+Pre order DFS can be used to "export" a tree structure so that it is easily reconstructed or copied.
+
+- Post order
+Explore the entire left side and visit the nodes, explore the entire right nodes and visit the nodes, then visit the parent nodes.
+
+- In order
+Explore the entire left side and visit the node, then go back and visit the parent node, and explore the right side of the node and visit.
+
+In order DFS can be used commonly with BSTs. We get all nodes in the tree in their underlying order. 
+
+
+#### BFS vs DFS
+Time complexity is the same because they visit every  single node after all. However, it depends on the tree's structure when it comes to space complexity. For the wide trees, deapth fist search will work better because it stores less nodes in a queue at a time. For the vertically long trees, breath first search will work better for the same reason.
