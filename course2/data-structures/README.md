@@ -136,9 +136,18 @@ In order DFS can be used commonly with BSTs. We get all nodes in the tree in the
 Time complexity is the same because they visit every  single node after all. However, it depends on the tree's structure when it comes to space complexity. For the wide trees, deapth fist search will work better because it stores less nodes in a queue at a time. For the vertically long trees, breath first search will work better for the same reason.
 
 ## Binary heaps
-Binary heaps are similar to a binary search tree, but they have some different rules.
+Binary heaps are similar to a binary search tree, but they have some different rules. They are very useful data structures for sroting and implementing other data structures like priority queues.
 
 In a **max binary heap**, parent nodes are always larger than child nodes. In a **min binnary heap**, parent nodes are always smaller than child nodes.
+
+
+
+### Time complexity
+- Insertion: O(log n)
+- Removal: O(log n)
+- Searching: O(n)
+
+For 16 elements, 4 comparisons...
 
 ### Max binary heap
 - Each parent has at most two child nodes
@@ -156,3 +165,7 @@ For any index of an array **n**, the left child is stored at **2n + 1** and the 
 
 - Find a parent from a child
 For any child node at index n, its parent is at index **(n - 1) / 2** (it has to be floored).
+
+### Priority queue
+Priority queue is a data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities.
+

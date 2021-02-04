@@ -19,7 +19,7 @@ class MaxBinaryHeap {
       let indexOfTheInsertedValue = this.values.length - 1
       let parentIndex = Math.floor((indexOfTheInsertedValue - 1) / 2)
 
-      while (this.values[indexOfTheInsertedValue] > this.values[parentIndex]) {
+      while (parentIndex >= 0 && this.values[indexOfTheInsertedValue] > this.values[parentIndex]) {
         let temp = this.values[parentIndex]
         this.values[parentIndex] = this.values[indexOfTheInsertedValue]
         this.values[indexOfTheInsertedValue] = temp
@@ -68,12 +68,6 @@ class MaxBinaryHeap {
    * - Return the old root
   */
   extractMax() {
-    // const swap = (element1, element2) => {
-    //   let temp = element1
-    //   element1 = element2
-    //   element2 = temp
-    // }
-    // swap(this.values[0], this.values[this.values.length - 1])
     let temp = this.values[0]
     this.values[0] = this.values[this.values.length - 1]
     this.values[this.values.length - 1] = temp
@@ -86,11 +80,12 @@ class MaxBinaryHeap {
     while (true) {
       const childIndex = this.values[leftChildIndex] > this.values[rightChildIndex] ? leftChildIndex : rightChildIndex
       if (this.values[parentIndex] < this.values[childIndex]) {
-        // swap(this.values[parentIndex], this.values[childIndex])
         let temp = this.values[parentIndex]
         this.values[parentIndex] = this.values[childIndex]
         this.values[childIndex] = temp
         parentIndex = childIndex
+        leftChildIndex = 2 * parentIndex + 1
+        rightChildIndex = 2 * parentIndex + 2
       } else {
         break
       }
@@ -98,6 +93,47 @@ class MaxBinaryHeap {
 
     return removedRoot
   }
+
+  // Provided solution
+  // extractMax() {
+  //   const max = this.values[0]
+  //   const end = this.values.pop()
+  //   if (this.values.length > 0) {
+  //     this.values[0] = end
+  //     this.sinkDown()
+  //   }
+  //   return max
+  // }
+  // sinkDown() {
+  //   let idx = 0
+
+  //   const length = this.values.length
+  //   const element = this.values[0]
+  //   while (true) {
+  //     let leftChildIdx = 2 * idx + 1
+  //     let rightChildIdx = 2 * idx + 2 
+  //     let leftChild, rightChild
+  //     let swap = null
+
+  //     if (leftChildIdx < length) {
+  //       leftChild = this.values[leftChildIdx]
+  //       if (leftChild > element) {
+  //         swap = leftChildIdx
+  //       }
+  //     }
+  //     if (rightChildIdx < length) {
+  //       rightChild = this.values[rightChildIdx]
+  //       if (swap === null && rightChild > element ||
+  //           swap !== null && rightChild > leftChild) {
+  //             swap = rightChildIdx
+  //       }
+  //     }
+  //     if (swap === null) break
+  //     this.values[idx] = this.values[swap]
+  //     this.values[swap] = element
+  //     idx = swap
+  //   }
+  // }
 }
 
 const heap = new MaxBinaryHeap()
@@ -111,5 +147,25 @@ heap.insert(55)
 console.log(heap, 'its heap before')
 console.log('=========================================')
 console.log(heap.extractMax(), 'extracted value')
+console.log(heap, 'its heap after')
 console.log('=========================================')
+console.log(heap.extractMax(), 'extracted value')
+console.log(heap, 'its heap after')
+console.log('=========================================')
+console.log(heap.extractMax(), 'extracted value')
+console.log(heap, 'its heap after')
+console.log('=========================================')
+console.log(heap.extractMax(), 'extracted value')
+console.log(heap, 'its heap after')
+console.log('=========================================')
+console.log(heap.extractMax(), 'extracted value')
+console.log(heap, 'its heap after')
+console.log('=========================================')
+console.log(heap.extractMax(), 'extracted value')
+console.log(heap, 'its heap after')
+console.log('=========================================')
+console.log(heap.extractMax(), 'extracted value')
+console.log(heap, 'its heap after')
+console.log('=========================================')
+console.log(heap.extractMax(), 'extracted value')
 console.log(heap, 'its heap after')
