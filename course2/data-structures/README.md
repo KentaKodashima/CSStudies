@@ -134,3 +134,25 @@ In order DFS can be used commonly with BSTs. We get all nodes in the tree in the
 
 #### BFS vs DFS
 Time complexity is the same because they visit every  single node after all. However, it depends on the tree's structure when it comes to space complexity. For the wide trees, deapth fist search will work better because it stores less nodes in a queue at a time. For the vertically long trees, breath first search will work better for the same reason.
+
+## Binary heaps
+Binary heaps are similar to a binary search tree, but they have some different rules.
+
+In a **max binary heap**, parent nodes are always larger than child nodes. In a **min binnary heap**, parent nodes are always smaller than child nodes.
+
+### Max binary heap
+- Each parent has at most two child nodes
+- The value of each parent node is always greater than its child nodes
+- In a max binary heap, the parent is greater than the children, but there are no gurantees between sibiling nodes
+- A binary heap is as compact as possible. All the children of each node are as full as they can be and left children are filled out first
+
+### Why use binary heaps?
+Binary heaps are used to implement Priority Queues, which are very commonly used data structures. They are also used quite a bit with Graph Traversasl algorithms.
+
+### Representing a heap in code
+
+- Find a child from a parent
+For any index of an array **n**, the left child is stored at **2n + 1** and the right child is at **2n + 2**.
+
+- Find a parent from a child
+For any child node at index n, its parent is at index **(n - 1) / 2** (it has to be floored).
