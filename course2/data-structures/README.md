@@ -140,8 +140,6 @@ Binary heaps are similar to a binary search tree, but they have some different r
 
 In a **max binary heap**, parent nodes are always larger than child nodes. In a **min binnary heap**, parent nodes are always smaller than child nodes.
 
-
-
 ### Time complexity
 - Insertion: O(log n)
 - Removal: O(log n)
@@ -169,3 +167,20 @@ For any child node at index n, its parent is at index **(n - 1) / 2** (it has to
 ### Priority queue
 Priority queue is a data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities.
 
+## Hash tables
+Hash tables are used to store key-value pairs. They are like arrays, but the keys are not ordered. Unlike arrays, hash tables are fast for all of the following operations: finding values, adding new values and removing values.
+
+### Use cases
+- Dictionaries in Python and Swift
+- bjects and Maps in JS
+- Maps in Java, Go and Scala
+- Hases in Ruby
+
+### Dealing with collisions
+Even with a large array and a great hash function, collisions are inevitable. There are many strategies for dealing with collisions.
+
+#### Separate chaining
+With sepatate chaining, at each index in our array we store values using a more sophisticated data structure(e.g. an array or a linked list). Thsi allows us to store multiple key-value pairs at the same index.
+
+#### Linear probing
+With linear probing, when we find a collision, we search through the array to find the next empty slot. Unlike with separate chaining, this allows us to store a single key-value at each index.
