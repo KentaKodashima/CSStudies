@@ -52,7 +52,60 @@ class HashTable {
 
     return undefined
   }
+
+  /**
+   * Keys
+   * 
+   * - Loop through the has table array and returns an array of keys in the table
+  */
+  keys() {
+    let keys = []
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; i < this.keyMap[i].length; j++) {
+          if (!keys.includes(this.keyMap[i][j][0])) {
+            keys.push(this.keyMap[i][j][0])
+          }
+        }
+      }
+    }
+
+    return keys
+  }
+
+  /**
+   * values
+   * 
+   * - Loop through the has table array and returns an array of values in the table
+  */
+  values() {
+    let values = []
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; i < this.keyMap[i].length; j++) {
+          if (!keys.includes(this.keyMap[i][j][1])) {
+            keys.push(this.keyMap[i][j][1])
+          }
+        }
+      }
+    }
+
+    return values
+  }
 }
+
+// let ht = new HashTable(17);
+// ht.set("maroon","#800000")
+// ht.set("yellow","#FFFF00")
+// ht.set("olive","#808000")
+// ht.set("salmon","#FA8072")
+// ht.set("lightcoral","#F08080")
+// ht.set("mediumvioletred","#C71585")
+// ht.set("plum","#DDA0DD")
+// // console.log(ht)
+// console.log(ht.get("yellow"))
 
 let ht = new HashTable(17);
 ht.set("maroon","#800000")
@@ -62,5 +115,10 @@ ht.set("salmon","#FA8072")
 ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
 ht.set("plum","#DDA0DD")
-// console.log(ht)
-console.log(ht.get("yellow"))
+ht.set("purple","#DDA0DD")
+ht.set("violet","#DDA0DD")
+
+
+ht.keys().forEach(function(key){
+  console.log(ht.get(key));
+})

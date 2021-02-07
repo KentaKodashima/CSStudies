@@ -170,6 +170,11 @@ Priority queue is a data structure where each element has a priority. Elements w
 ## Hash tables
 Hash tables are used to store key-value pairs. They are like arrays, but the keys are not ordered. Unlike arrays, hash tables are fast for all of the following operations: finding values, adding new values and removing values.
 
+### Time complexity
+- Insertion: O(1)
+- Deletion: O(1)
+- Access: O(1)
+
 ### Use cases
 - Dictionaries in Python and Swift
 - bjects and Maps in JS
