@@ -189,3 +189,32 @@ With sepatate chaining, at each index in our array we store values using a more 
 
 #### Linear probing
 With linear probing, when we find a collision, we search through the array to find the next empty slot. Unlike with separate chaining, this allows us to store a single key-value at each index.
+
+## Graphs
+A graph data structure consists of a finite (and possibly mutable) set of vertices or nodes or points, together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph.
+
+### Use cases
+- Social networks (recommendations)
+- Location / mapping
+- Routing algorithms
+- Visual hierarchy
+- File system optimizations
+
+### Graph terminology
+- Vertex - a node
+- Edge - connection between nodes
+- Wighted / Unweighted - values assigned to distances
+between vertices
+
+### Types of graphs
+#### Undirected graph
+Edges don't have any directions. It is useful for cases like SNS friends logic.
+
+#### Directed graph
+Edges have spesific directions assigned to the edge. It is useful for cases like SNS fllowing logic.
+
+#### Weighted graph
+Each edge has a value assigned to them. It is useful for cases like map directions.
+
+### Ways to store graphs
+#### Adjacency matrix
