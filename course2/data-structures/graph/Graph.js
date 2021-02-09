@@ -46,8 +46,8 @@ class Graph {
    *    g.removeEdge('Tokyo', 'Dallas') -> { 'Tokyo': [], 'Dallas': [] }
   */
   removeEdge(vertex1, vertex2) {
-    this.adjacencyList[vertex1].filter((item) => item !== vertex2)
-    this.adjacencyList[vertex2].filter((item) => item !== vertex1)
+    this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter((item) => item !== vertex2)
+    this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter((item) => item !== vertex1)
   }
 
   /**
@@ -59,10 +59,34 @@ class Graph {
    * - Delete the key in the adjacency list for that vertex
   */
   removeVertex(vertex) {
-    for (key in this.adjacencyList) {
-      if (key === vertex) {
-        
-      }
+    while (this.adjacencyList[vertex].length) {
+      this.removeEdge(vertex, this.adjacencyList[vertex][0])
     }
+    delete this.adjacencyList[vertex]
   }
+
+  // Provided solution
+  // removeVertex(vertex){
+  //   while(this.adjacencyList[vertex].length){
+  //     const adjacentVertex = this.adjacencyList[vertex].pop();
+  //     this.removeEdge(vertex, adjacentVertex);
+  //   }
+  //   delete this.adjacencyList[vertex]
+  // }
 }
+
+let g = new Graph()
+g.addVertex("Dallas")
+g.addVertex("Tokyo")
+g.addVertex("Aspen")
+g.addVertex("Los Angeles")
+g.addVertex("Hong Kong")
+g.addEdge("Dallas", "Tokyo")
+g.addEdge("Dallas", "Aspen")
+g.addEdge("Hong Kong", "Tokyo")
+g.addEdge("Hong Kong", "Dallas")
+g.addEdge("Los Angeles", "Hong Kong")
+g.addEdge("Los Angeles", "Aspen")
+console.log(g, 'its g before')
+g.removeVertex("Dallas")
+console.log(g, 'its g after')
