@@ -218,3 +218,65 @@ Each edge has a value assigned to them. It is useful for cases like map directio
 
 ### Ways to store graphs
 #### Adjacency matrix
+1 in the table below means there is an edge between the two vertices.
+
+|  -  |  A  |  B  |  C  |  D  |  E  |  F  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  A  |  0  |  1  |  0  |  0  |  0  |  1  |
+|  B  |  1  |  0  |  1  |  0  |  0  |  0  |
+|  C  |  0  |  1  |  0  |  1  |  0  |  0  |
+|  D  |  0  |  0  |  1  |  0  |  1  |  0  |
+|  E  |  0  |  0  |  0  |  1  |  0  |  1  |
+|  F  |  1  |  0  |  0  |  0  |  1  |  0  |
+
+#### Adjacency List
+Each key or index represent a vertex. And cooresponding values are the vertices connected with the vertex.
+
+```
+// Integer values
+[
+  [1,5], // Vertex: 0
+  [0,2], // Vertex: 1
+  [1,3], // Vertex: 2
+  [2,4], // Vertex: 3
+  [3,5], // Vertex: 4
+  [4,0], // Vertex: 5
+]
+
+// String values
+[
+  A: ['B','F'],
+  B: ['A','C'],
+  C: ['B','D'],
+  D: ['C','E'],
+  E: ['D','F'],
+  F: ['E','A'],
+]
+```
+
+### Time complexities
+|V| - Number of vertices  
+|E| - Number of edges
+
+|  Operation      |  Adjacency List  |  Adjacency Matrix  |
+|  -------------  |  --------------  |  ----------------  |
+|  Add vertex     |  O(1)            |  O(|V^2|)          |
+|  Add edge       |  O(1)            |  O(1)              |
+|  Remove vertex  |  O(|V| + |E|)    |  O(|V^2|)          |
+|  Remove edge    |  O(|E|)          |  O(1)              |
+|  Query          |  O(|V| + |E|)    |  O(1)              |
+|  Storage        |  O(|V| + |E|)    |  O(|V^2|)          |
+
+### Adjacency matrix vs adjacency list
+#### Adjacency
+- Takes up more space (in sparse graphs)
+- Slower to iterate over all edges
+- Faster to lookup specific edge
+
+#### Adjacency list
+- Can take up less space (in sparse graphs)
+- Faster to iterate over all edges
+- Can be slower to lookkup specific edge
+
+#### Which is more common?
+Adjacency list is a common choice because most data in the real-world tends to lend itself to sparser and/or larger graphs.
