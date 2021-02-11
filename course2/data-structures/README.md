@@ -21,6 +21,8 @@ A data structure that contains a head, tail and length property. Linked lists co
 - Searching: O(n)
 - Access: O(n)
 
+
+
 ## Doubly Linked List
 Doubly linked lists are almost identical to singly linked lists. However, every node in doubly linked lists has another pointer to the previous node. Therefore, finding nodes can be done in half time of singly linked lists. However, they take up more memory considering the extra pointer.
 
@@ -29,6 +31,9 @@ Doubly linked lists are almost identical to singly linked lists. However, every 
 - Removal: O(1)
 - Searching: O(n)
 - Access: O(n)
+
+
+
 
 ## Stack
 Stack is a FIFO data structure. The last element added to the stack will be the first element removed from the stack.
@@ -45,6 +50,9 @@ It can be implemented easily using an array (push/pop). However, a stack doesn't
 - Removal: O(1)
 - Searching: O(n)
 - Access: O(n)
+
+
+
 
 ## Queue
 Queue is a FIFO data structure. The first element added to the queue will be the first element removed from the queue.
@@ -63,6 +71,9 @@ Just like stack, it can be implemented easily using an array (push/shift). Howev
 - Removal: O(1)
 - Searching: O(n)
 - Access: O(n)
+
+
+
 
 ## Trees
 Tree is a data structure that consists of nodes in a parent/child(s) relationship.
@@ -131,9 +142,11 @@ Explore the entire left side and visit the node, then go back and visit the pare
 
 In order DFS can be used commonly with BSTs. We get all nodes in the tree in their underlying order. 
 
-
 #### BFS vs DFS
 Time complexity is the same because they visit every  single node after all. However, it depends on the tree's structure when it comes to space complexity. For the wide trees, deapth fist search will work better because it stores less nodes in a queue at a time. For the vertically long trees, breath first search will work better for the same reason.
+
+
+
 
 ## Binary heaps
 Binary heaps are similar to a binary search tree, but they have some different rules. They are very useful data structures for sroting and implementing other data structures like priority queues.
@@ -167,6 +180,9 @@ For any child node at index n, its parent is at index **(n - 1) / 2** (it has to
 ### Priority queue
 Priority queue is a data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities.
 
+
+
+
 ## Hash tables
 Hash tables are used to store key-value pairs. They are like arrays, but the keys are not ordered. Unlike arrays, hash tables are fast for all of the following operations: finding values, adding new values and removing values.
 
@@ -189,6 +205,9 @@ With sepatate chaining, at each index in our array we store values using a more 
 
 #### Linear probing
 With linear probing, when we find a collision, we search through the array to find the next empty slot. Unlike with separate chaining, this allows us to store a single key-value at each index.
+
+
+
 
 ## Graphs
 A graph data structure consists of a finite (and possibly mutable) set of vertices or nodes or points, together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph.
@@ -280,3 +299,21 @@ Each key or index represent a vertex. And cooresponding values are the vertices 
 
 #### Which is more common?
 Adjacency list is a common choice because most data in the real-world tends to lend itself to sparser and/or larger graphs.
+
+
+
+
+## Graph Traversal
+Graph traversal includes visiting, updating, checking eaxh vertex in a graph.
+
+### Use cases
+- Peer to peer networking
+- Web crawlers
+- Finding the closest matches/recommendations
+- Shortest path problems
+    - GPS navigation
+    - Solving mazes
+    - AI (shortest path to win the game)
+
+### Depth First Graph Traversal
+Starting from the vertex that you choose, visit all neighbours of the first neighbour before visiting its neighbours.
