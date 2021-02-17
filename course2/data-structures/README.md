@@ -317,3 +317,6 @@ Graph traversal includes visiting, updating, checking eaxh vertex in a graph.
 
 ### Depth First Graph Traversal
 Starting from the vertex that you choose, visit all neighbours of the first neighbour before visiting its neighbours.
+
+### Breath First Graph Traversal
+Starting from the vertex that you choose, visit all neighbours at the current depth before visiting neighbours of neighbours.

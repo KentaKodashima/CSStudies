@@ -133,7 +133,7 @@ class Graph {
   /**
    * Depth first search (iterative)
    * 
-   * - The functio should accept a starting node
+   * - The function should accept a starting node
    * - Create a stack to help use keep track of vertices (use a list/array)
    * - Create a list to store the end result to be returned at the very end
    * - Create an object to store visited vertices
@@ -146,6 +146,64 @@ class Graph {
    *          - Push all of its neighbors into the stack
    * - Return the result array
   */
+  depthFirstIterative(start) {
+    let stack = [start]
+    let result = []
+    let visited = {}
+    let current
+
+    visited[start] = 1
+
+    while (stack.length) {
+      current = stack.pop()
+      visited[current] = 1
+      result.push(popped)
+      this.adjacencyList[current].forEach(neighbor => {
+        if(!visited[neighbor]) {
+          visited[neighbor] = 1
+          stack.push(neighbor)
+        }
+      })
+    }
+
+    return result
+  }
+
+  /**
+   * Breath First Search
+   * - This function should accept a starting vertex
+   * - Create a queue (can be an array) and place the starting vertex in it
+   * - Create an array to store the nodes visited
+   * - Create an object to store nodes visited
+   * - Mark the starting vertex as visited
+   * - Loop as long as there is anything in the queue
+   * - Remove the first vertex from the queue and push it into the array that stores nodes visited
+   * - Loop over each vertex in the adjacency list for the vertex you are visiting
+   * - If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
+   * - Return the array of visited nodes
+  */
+  breathFirst(start) {
+    let queue = [start]
+    let result = []
+    let visited = {}
+    let current
+
+    visited[start] = 1
+
+    while (queue.length) {
+      current = queue.shift()
+      result.push(current)
+      
+      this.adjacencyList[current].forEach(neighbor => {
+        if(!visited[neighbor]) {
+          visited[neighbor] = 1
+          queue.push(neighbor)
+        }
+      })
+    }
+
+    return result
+  }
 }
 
 // let g = new Graph()
